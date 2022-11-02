@@ -33,7 +33,8 @@ app.post("/sign-up", (req, res) => {
 });
 
 app.post("/tweets", (req, res) => {
-  const { username, tweet } = req.body;
+  const tweet = req.body.tweet;
+  const username = req.headers.username;
   const avatar = getAvatar(username);
 
   if (!username || !tweet || !avatar) {
