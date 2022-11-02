@@ -1,7 +1,10 @@
 import express from "express";
+import cors from "cors";
+
 const PORT = 5000;
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const users = [];
 const tweets = [];
@@ -23,6 +26,6 @@ app.post("/tweets", (req, res) => {
 });
 
 app.get("/tweets", (req, res) => {
-  const lastTweets = tweets.slice(tweets.length - 10, tweets.length);
+  const lastTweets = tweets.slice(tweets.length - 10, tweets.length).reverse();
   res.send(lastTweets);
 });
