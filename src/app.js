@@ -28,7 +28,7 @@ app.post("/sign-up", (req, res) => {
     res.status(400).send("Todos os campos são obrigatórios!");
   } else {
     users.push({ username, avatar });
-    res.send("ok");
+    res.status(201).send("ok");
   }
 });
 
@@ -40,7 +40,7 @@ app.post("/tweets", (req, res) => {
     res.status(400).send("Todos os campos são obrigatórios!");
   } else {
     tweets.push({ username, tweet, avatar });
-    res.send(tweets);
+    res.status(201).send(tweets);
   }
 });
 
