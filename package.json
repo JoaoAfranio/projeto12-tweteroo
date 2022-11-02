@@ -1,0 +1,27 @@
+{
+  "name": "projeto12-tweteroo",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoaoAfranio/projeto12-tweteroo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoaoAfranio/projeto12-tweteroo/issues"
+  },
+  "homepage": "https://github.com/JoaoAfranio/projeto12-tweteroo#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
