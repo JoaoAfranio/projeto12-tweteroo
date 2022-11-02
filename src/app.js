@@ -9,6 +9,12 @@ app.use(cors());
 const users = [];
 const tweets = [];
 
+function getAvatar(username) {
+  const user = users.find((u) => u.username === username);
+  const avatar = user.avatar;
+  return avatar;
+}
+
 app.listen(PORT, () => {
   console.log(`Server running on ${PORT}`);
 });
@@ -21,8 +27,7 @@ app.post("/sign-up", (req, res) => {
 
 app.post("/tweets", (req, res) => {
   const { username, tweet } = req.body;
-  const user = users.find((u) => u.username === username);
-  const avatar = user.avatar;
+  const avatar = getAvatar(username);
   tweets.push({ username, tweet, avatar });
   res.send(tweets);
 });
