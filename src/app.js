@@ -48,3 +48,9 @@ app.get("/tweets", (req, res) => {
   const lastTweets = tweets.slice(tweets.length - 10, tweets.length).reverse();
   res.send(lastTweets);
 });
+
+app.get("/tweets/:username", (req, res) => {
+  const username = req.params.username;
+  const tweetsByUser = tweets.filter((tweet) => tweet.username === username);
+  res.send(tweetsByUser);
+});
