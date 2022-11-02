@@ -51,13 +51,9 @@ app.get("/tweets", (req, res) => {
   let lastTweets = [];
 
   if (page >= 1) {
-    if (page === 1) {
-      lastTweets = listTweetsByLast.slice(0, 10);
-    } else {
-      const end = page * 10;
-      const start = end - 9;
-      lastTweets = listTweetsByLast.slice(start, end);
-    }
+    const end = page * 10;
+    const start = end - 10;
+    lastTweets = listTweetsByLast.slice(start, end);
     res.send(lastTweets);
   } else {
     res.status(400).send("Informe uma página válida!");
