@@ -20,8 +20,10 @@ app.post("/sign-up", (req, res) => {
 });
 
 app.post("/tweets", (req, res) => {
-  const newTweet = req.body;
-  tweets.push(newTweet);
+  const { username, tweet } = req.body;
+  const user = users.find((u) => u.username === username);
+  const avatar = user.avatar;
+  tweets.push({ username, tweet, avatar });
   res.send(tweets);
 });
 
